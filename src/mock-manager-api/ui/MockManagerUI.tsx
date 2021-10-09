@@ -3,10 +3,8 @@ import ReactDOM from "react-dom";
 import { Scenario } from "../model/Mock";
 import { MockManager } from "../out/web/initializeApi";
 
-const global = window as any;
-
 export const MockManagerUI = () => {
-  const mockManager: MockManager = global.mockManager;
+  const mockManager: MockManager = (window as any).mockManager;
   const [active, setActive] = useState<string[]>([]);
 
   useEffect(() => {
@@ -17,7 +15,7 @@ export const MockManagerUI = () => {
 
   return (
     <div>
-      {global?.mockManager?.getScenarios()?.map((x: Scenario) => {
+      {mockManager?.getScenarios()?.map((x: Scenario) => {
         return (
           <span>
             <input
@@ -29,7 +27,7 @@ export const MockManagerUI = () => {
                   : mockManager
                       .getActiveScenariosNames()
                       .filter((y) => !y.includes(x.name));
-                global.mockManager.setActiveScenarios(scenaries);
+                mockManager.setActiveScenarios(scenaries);
               }}
             />{" "}
             {x.name}
@@ -44,7 +42,9 @@ class WebComponentUI extends HTMLElement {
   connectedCallback() {
     const mountPoint = document.createElement("span");
     this.attachShadow({ mode: "open" }).appendChild(mountPoint);
-    ReactDOM.render(<MockManagerUI />, mountPoint);
+    if (process.env.NODE_ENV === "development") {
+      ReactDOM.render(<MockManagerUI />, mountPoint);
+    }
   }
 }
 customElements.define("mock-manager", WebComponentUI);

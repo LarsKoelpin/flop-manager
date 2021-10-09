@@ -1,12 +1,19 @@
 import { setupServer } from "msw/node";
-import { MockManagerRule } from "../../model/Mock";
+import { MockManagerRule, Scenario } from "../../model/Mock";
 import { rest } from "msw";
 
-export const initializeMockServer = (m: MockManagerRule) => {
-  const server = setupServer(
-    rest.get(m.path, (req, res, ctx) => {
-      return res(ctx.json(m.responseBody));
-    })
-  );
+export const initializeMockServer = (m: Scenario[]) => {
+  let handlers: any[] = [];
+
+  for (const sc of m) {
+    const newHandlers = sc.rules.map((rule) => {
+      return rest.get(rule.path, (req, res, ctx) => {
+        return res(ctx.json(rule.responseBody));
+      });
+    });
+    handlers = [...handlers, ...newHandlers];
+  }
+
+  const server = setupServer(...handlers);
   return server;
 };

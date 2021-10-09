@@ -6,6 +6,10 @@ import App from "./App";
 import "@testing-library/jest-dom";
 
 import {
+  emptyScenario,
+  happyScenario,
+  performanceScenaro,
+  scenarios,
   tweetsEmptyWiremockData,
   tweetsRefWiremockData,
   tweetsWiremockData,
@@ -14,7 +18,7 @@ import { initializeMockServer as initializeMock } from "../mock-manager-api/out/
 
 describe("app", () => {
   describe("Should render happy app", () => {
-    const server = initializeMock(tweetsWiremockData);
+    const server = initializeMock([happyScenario]);
     beforeAll(() => server.listen());
     afterEach(() => server.resetHandlers());
     afterAll(() => server.close());
@@ -30,7 +34,7 @@ describe("app", () => {
   });
 
   describe("Should render perf app", () => {
-    const server = initializeMock(tweetsRefWiremockData);
+    const server = initializeMock([performanceScenaro]);
     beforeAll(() => server.listen());
     afterEach(() => server.resetHandlers());
     afterAll(() => server.close());
@@ -46,7 +50,7 @@ describe("app", () => {
   });
 
   describe("Should render happy app", () => {
-    const server = initializeMock(tweetsEmptyWiremockData);
+    const server = initializeMock([emptyScenario]);
     beforeAll(() => server.listen());
     afterEach(() => server.resetHandlers());
     afterAll(() => server.close());

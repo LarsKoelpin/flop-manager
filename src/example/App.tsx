@@ -15,28 +15,15 @@ declare global {
 }
 
 function App({}: any) {
-  const [c, setC] = useState(0);
-  useEffect(() => {
-    console.log("REGISTER HANDLER");
-    (window as any).mockManager.addEventListener(
-      "active-scenario-changed",
-      () => {
-        console.log("CHANGED");
-        setC((x) => x + 1);
-      }
-    );
-  }, []);
-  // Create the count state.
   const [data, setData] = useState<Tweet[]>([]);
-  // Create the counter (+1 every second).
+
   useEffect(() => {
     (async () => {
       const tweets = await fetchTweets();
-      console.log("Hi", tweets);
       setData(tweets);
     })();
   }, []);
-  // Return the App component.
+
   return (
     <div className="App" data-testid="my-app">
       <mock-manager></mock-manager>
