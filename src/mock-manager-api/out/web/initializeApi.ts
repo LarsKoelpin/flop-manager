@@ -17,15 +17,14 @@ export const setupMockManager = (
 ): MockManager => {
   const handlers = { "active-scenario-changed": [] as Function[] };
   let worker: any | null = null;
-
-  let activeScenario: string[] = [scenarios[0].name];
-
   return {
-    getActiveScenariosNames: () => {
-      return activeScenario;
+    getActiveScenariosNames() {
+      return JSON.parse(localStorage.getItem("mm-active") || "[]");
     },
-    getActiveScenarios: () => {
-      return scenarios.filter((x) => activeScenario.includes(x.name));
+    getActiveScenarios() {
+      return scenarios.filter((scenario) =>
+        this.getActiveScenariosNames().includes(scenario.name)
+      );
     },
     getScenarios: () => {
       return scenarios;
@@ -35,12 +34,14 @@ export const setupMockManager = (
         handlers["active-scenario-changed"].push(handler);
       }
     },
-    setActiveScenarios: (sc: string[]) => {
-      activeScenario = sc;
-      handlers["active-scenario-changed"].forEach((f) => f(activeScenario));
+    setActiveScenarios(sc: string[]) {
+      localStorage.setItem("mm-active", JSON.stringify(sc));
+      handlers["active-scenario-changed"].forEach((f) =>
+        f(this.getActiveScenariosNames())
+      );
     },
-    start: () => {
-      worker = initializeMockSW(scenarios[0]);
+    start() {
+      worker = initializeMockSW(this.getActiveScenarios());
       worker.start();
     },
     stop: () => {
