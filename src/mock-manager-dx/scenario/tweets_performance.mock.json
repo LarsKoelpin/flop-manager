@@ -1,0 +1,13 @@
+{
+  "request": {
+    "urlPath": "/tweets",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      { "tweet": "hello World", "sender": "Andreas" },
+      { "tweet": "hello World", "sender": "Lars" }
+    ]
+  }
+}
