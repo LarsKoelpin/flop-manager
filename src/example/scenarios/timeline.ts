@@ -12,21 +12,25 @@ export const tweetsEmptyWiremockData = wireMockToMockManager(tweetsEmpty);
 export const happyScenario = {
   name: "Happy Timeline",
   rules: tweetsWiremockData,
+  description: "",
 };
 
 export const performanceScenaro = {
   name: "Performance",
   rules: tweetsRefWiremockData,
+  description: "",
 };
 
 export const aLotPerformanceScenaro = {
   name: "AlotPerformance",
   rules: [alotPerforanceData()],
+  description: "",
 };
 
 export const emptyScenario = {
   name: "Empty Timeline",
   rules: tweetsEmptyWiremockData,
+  description: "",
 };
 
 export const scenarios: Scenario[] = [

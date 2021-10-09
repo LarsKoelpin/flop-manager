@@ -7,7 +7,7 @@ export const initializeMockServer = (m: Scenario[]) => {
 
   for (const sc of m) {
     const newHandlers = sc.rules.map((rule) => {
-      return rule;
+      return rule.handler;
     });
     handlers = [...handlers, ...newHandlers];
   }

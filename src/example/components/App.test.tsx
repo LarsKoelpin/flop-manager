@@ -10,7 +10,7 @@ import {
   emptyScenario,
   happyScenario,
   performanceScenaro,
-} from "../scenarios/scenario";
+} from "../scenarios/timeline";
 
 describe("app", () => {
   describe("Should render happy app", () => {

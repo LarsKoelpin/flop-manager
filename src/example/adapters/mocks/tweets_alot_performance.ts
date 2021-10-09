@@ -11,7 +11,10 @@ export default (): Mock => {
       text: faker.lorem.sentence(),
     });
   }
-  return rest.get("http://localhost:8080/tweets", (req, res, ctx) => {
-    return res(ctx.json(tweets));
-  });
+  return {
+    name: "tweets",
+    handler: rest.get("http://localhost:8080/tweets", (req, res, ctx) => {
+      return res(ctx.json(tweets));
+    }),
+  };
 };
