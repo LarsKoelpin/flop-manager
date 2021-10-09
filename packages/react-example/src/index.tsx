@@ -1,4 +1,4 @@
-import { install } from "mock-manager-ui";
+import "mock-manager-ui";
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -8,7 +8,6 @@ import { tweetScenarios } from "./scenarios/timeline";
 import App from "./components/App";
 
 if (process.env.NODE_ENV === "development") {
-  install();
   (window as any).mockManager = setupMockManager({}, [...tweetScenarios]);
   console.log("Registering");
   (window as any).mockManager.addEventListener(
