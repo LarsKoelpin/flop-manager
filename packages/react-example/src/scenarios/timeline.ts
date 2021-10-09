@@ -1,6 +1,5 @@
-import { wireMockToMockManager } from "../../mock-manager-api/inbound/wiremockToMockManager";
-import { Scenario } from "../../mock-manager-api/model/Mock";
-import tweetsWiremock from "../adapters/mocks/tweets.mock.json";
+import { wireMockToMockManager, Scenario } from "mock-manager";
+import tweetsWiremock from "../adapters/mocks/tweets_happy.mock.json";
 import tweetsPerf from "../adapters/mocks/tweets_performance.mock.json";
 import tweetsEmpty from "../adapters/mocks/tweets_empty.mock.json";
 import alotPerforanceData from "../adapters/mocks/tweets_alot_performance";
@@ -16,13 +15,13 @@ export const happyScenario = {
 };
 
 export const performanceScenaro = {
-  name: "Performance",
+  name: "Performance Timeline",
   rules: tweetsRefWiremockData,
   description: "",
 };
 
-export const aLotPerformanceScenaro = {
-  name: "AlotPerformance",
+export const aLotPerformanceScenario = {
+  name: "AlotPerformance Timeline",
   rules: [alotPerforanceData()],
   description: "",
 };
@@ -33,9 +32,9 @@ export const emptyScenario = {
   description: "",
 };
 
-export const scenarios: Scenario[] = [
+export const tweetScenarios: Scenario[] = [
   happyScenario,
   performanceScenaro,
   emptyScenario,
-  aLotPerformanceScenaro,
+  aLotPerformanceScenario,
 ];

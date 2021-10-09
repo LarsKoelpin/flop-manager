@@ -1,0 +1,23 @@
+{
+  "request": {
+    "urlPath": "/profiles",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      {
+        "name": "Tick",
+        "profileImageUrl": "https://via.placeholder.com/150"
+      },
+      {
+        "name": "Trick",
+        "profileImageUrl": "https://via.placeholder.com/150"
+      },
+      {
+        "name": "Track",
+        "profileImageUrl": "https://via.placeholder.com/150"
+      }
+    ]
+  }
+}

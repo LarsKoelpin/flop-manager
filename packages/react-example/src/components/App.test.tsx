@@ -1,11 +1,8 @@
-import React from "react";
-import { rest } from "msw";
-import { setupServer } from "msw/node";
-import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import App from "./App";
 import "@testing-library/jest-dom";
 
-import { initializeMockServer as initializeMock } from "../../mock-manager-api/outbound/node/initializeMock";
+import { initializeMockServer as initializeMock } from "mock-manager";
 import {
   emptyScenario,
   happyScenario,

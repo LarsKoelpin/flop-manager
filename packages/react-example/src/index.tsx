@@ -1,11 +1,14 @@
+import "mock-manager-ui";
+
 import React from "react";
 import ReactDOM from "react-dom";
-import { setupMockManager } from "./mock-manager-api/outbound/web/initializeApi";
-import { scenarios } from "./example/scenarios/timeline";
-import App from "./example/components/App";
+import { setupMockManager } from "mock-manager";
+import { tweetScenarios } from "./scenarios/timeline";
+
+import App from "./components/App";
 
 if (process.env.NODE_ENV === "development") {
-  (window as any).mockManager = setupMockManager({}, scenarios);
+  (window as any).mockManager = setupMockManager({}, [...tweetScenarios]);
   console.log("Registering");
   (window as any).mockManager.addEventListener(
     "active-scenario-changed",
