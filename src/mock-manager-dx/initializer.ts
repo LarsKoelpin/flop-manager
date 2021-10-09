@@ -8,7 +8,7 @@ export const tweetsWiremockData = wireMockToMockManager(tweetsWiremock);
 export const tweetsRefWiremockData = wireMockToMockManager(tweetsPerf);
 export const tweetsEmptyWiremockData = wireMockToMockManager(tweetsEmpty);
 
-export const rules: Scenario[] = [
+export const scenarios: Scenario[] = [
   {
     name: "Happy Timeline",
     rules: [tweetsWiremockData],

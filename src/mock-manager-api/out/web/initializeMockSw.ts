@@ -1,5 +1,5 @@
 import { setupWorker, rest } from "msw";
-import { MockManagerRule, Scenario } from "../Mock";
+import { MockManagerRule, Scenario } from "../../Mock";
 
 export const initializeMockSW = (m: Scenario) => {
   const handlers = m.rules.map((rule) => {

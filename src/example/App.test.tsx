@@ -10,7 +10,7 @@ import {
   tweetsRefWiremockData,
   tweetsWiremockData,
 } from "../mock-manager-dx/initializer";
-import { initializeMockServer as initializeMock } from "../mock-manager-api/out/initializeMock";
+import { initializeMockServer as initializeMock } from "../mock-manager-api/out/node/initializeMock";
 
 describe("app", () => {
   describe("Should render happy app", () => {

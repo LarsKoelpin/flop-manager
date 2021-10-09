@@ -1,20 +1,25 @@
+import { useState } from "react";
 import ReactDOM from "react-dom";
 import { Scenario } from "../Mock";
 
 const global = window as any;
 export const MockManagerUI = () => {
+  const [active, setActive] = useState<string[]>([]);
   return (
     <div>
-      <select
-        onChange={(e) => {
-          console.log("EVENT", e);
-          global.mockManager.changeScenario(e.target.value);
-        }}
-      >
-        {global?.mockManager?.scenarios?.map((x: Scenario) => {
-          return <option>{x.name}</option>;
-        })}
-      </select>
+      {global?.mockManager?.getScenarios()?.map((x: Scenario) => {
+        return (
+          <span>
+            <input
+              type="checkbox"
+              onChange={(e) => {
+                global.mockManager.setActiveScenarios();
+              }}
+            />{" "}
+            {x.name}
+          </span>
+        );
+      })}
     </div>
   );
 };
@@ -24,7 +29,7 @@ class WebComponentUI extends HTMLElement {
     const mountPoint = document.createElement("span");
     this.attachShadow({ mode: "open" }).appendChild(mountPoint);
 
-    console.log("hi", (window as any).mockManager.scenarios);
+    console.log("hi", (window as any).mockManager.getScenarios());
     ReactDOM.render(<MockManagerUI />, mountPoint);
   }
 }

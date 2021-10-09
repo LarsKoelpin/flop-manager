@@ -18,7 +18,7 @@ function App({}: any) {
   const [c, setC] = useState(0);
   useEffect(() => {
     console.log("REGISTER HANDLER");
-    (window as any).mockManager.addEventHandler("change", () => {
+    (window as any).mockManager.addEventListener("change", () => {
       console.log("CHANGED");
       setC((x) => x + 1);
     });
