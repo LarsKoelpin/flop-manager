@@ -1,4 +1,4 @@
-import { wireMockToMockManager } from "../../mock-manager-api/in/wiremockToMockManager";
+import { wireMockToMockManager } from "../../mock-manager-api/inbound/wiremockToMockManager";
 import { Scenario } from "../../mock-manager-api/model/Mock";
 import tweetsWiremock from "../adapters/mocks/tweets.mock.json";
 import tweetsPerf from "../adapters/mocks/tweets_performance.mock.json";
@@ -11,12 +11,12 @@ export const tweetsEmptyWiremockData = wireMockToMockManager(tweetsEmpty);
 
 export const happyScenario = {
   name: "Happy Timeline",
-  rules: [tweetsWiremockData],
+  rules: tweetsWiremockData,
 };
 
 export const performanceScenaro = {
   name: "Performance",
-  rules: [tweetsRefWiremockData],
+  rules: tweetsRefWiremockData,
 };
 
 export const aLotPerformanceScenaro = {
@@ -26,7 +26,7 @@ export const aLotPerformanceScenaro = {
 
 export const emptyScenario = {
   name: "Empty Timeline",
-  rules: [tweetsEmptyWiremockData],
+  rules: tweetsEmptyWiremockData,
 };
 
 export const scenarios: Scenario[] = [

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Scenario } from "../model/Mock";
-import { MockManager } from "../out/web/initializeApi";
+import { MockManager } from "../outbound/web/initializeApi";
 
 export const MockManagerUI = () => {
   const mockManager: MockManager = (window as any).mockManager;
