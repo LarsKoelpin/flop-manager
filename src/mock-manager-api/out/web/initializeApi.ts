@@ -1,4 +1,4 @@
-import { MockManagerRule, Scenario } from "../../model/Mock";
+import { Scenario } from "../../model/Mock";
 import { initializeMockSW } from "./initializeMockSw";
 
 export type MockManager = {
@@ -12,7 +12,7 @@ export type MockManager = {
 };
 
 export const setupMockManager = (
-  options: any,
+  _: any,
   scenarios: Scenario[]
 ): MockManager => {
   const handlers = { "active-scenario-changed": [] as Function[] };

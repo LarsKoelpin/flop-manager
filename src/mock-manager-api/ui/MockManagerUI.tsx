@@ -5,13 +5,13 @@ import { MockManager } from "../out/web/initializeApi";
 
 export const MockManagerUI = () => {
   const mockManager: MockManager = (window as any).mockManager;
-  const [active, setActive] = useState<string[]>([]);
+  const [, setActive] = useState<string[]>([]);
 
   useEffect(() => {
     mockManager.addEventListener("active-scenario-changed", (x: string[]) => {
       setActive(x);
     });
-  }, []);
+  }, [mockManager]);
 
   return (
     <div>

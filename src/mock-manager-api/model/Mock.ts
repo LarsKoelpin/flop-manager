@@ -9,7 +9,7 @@ export const MockManagerRuleSchema = vod(
     responseBody: zod.any(),
   })
 );
-export const MockManagerRule = MockManagerRuleSchema.create;
+export const CreateMockManagerRule = MockManagerRuleSchema.create;
 export type MockManagerRule = zod.infer<typeof MockManagerRuleSchema>;
 
 export type Scenario = {

@@ -1,6 +1,5 @@
 import { setupWorker, rest } from "msw";
-import { late } from "zod";
-import { MockManagerRule, Scenario } from "../../model/Mock";
+import { Scenario } from "../../model/Mock";
 
 export const initializeMockSW = (m: Scenario[]) => {
   let handlers: any[] = [];

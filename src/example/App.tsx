@@ -14,7 +14,7 @@ declare global {
   }
 }
 
-function App({}: any) {
+function App(props: any) {
   const [data, setData] = useState<Tweet[]>([]);
 
   useEffect(() => {
