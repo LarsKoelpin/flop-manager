@@ -1,4 +1,4 @@
-import { setupWorker, rest } from "msw";
+import { setupWorker } from "msw";
 import { Scenario } from "../../model/Mock";
 
 export const initializeMockSW = (m: Scenario[]) => {
