@@ -9,3 +9,5 @@ declare global {
     }
   }
 }
+
+declare module "mock-manager-ui";

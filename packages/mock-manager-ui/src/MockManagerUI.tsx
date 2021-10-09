@@ -14,7 +14,7 @@ export const MockManagerUI = () => {
 
   return (
     <div>
-      {mockManager?.getScenarios()?.map((x: Scenario) => {
+      {mockManager.getScenarios().map((x: Scenario) => {
         return (
           <span>
             <input
@@ -36,14 +36,3 @@ export const MockManagerUI = () => {
     </div>
   );
 };
-
-class WebComponentUI extends HTMLElement {
-  connectedCallback() {
-    const mountPoint = document.createElement("span");
-    this.attachShadow({ mode: "open" }).appendChild(mountPoint);
-    if (process.env.NODE_ENV === "development") {
-      ReactDOM.render(<MockManagerUI />, mountPoint);
-    }
-  }
-}
-customElements.define("mock-manager", WebComponentUI);
