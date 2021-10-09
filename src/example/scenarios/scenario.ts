@@ -1,9 +1,9 @@
-import { wireMockToMockManager } from "../mock-manager-api/in/wiremockToMockManager";
-import tweetsWiremock from "./scenario/tweets.mock.json";
-import tweetsPerf from "./scenario/tweets_performance.mock.json";
-import tweetsEmpty from "./scenario/tweets_empty.mock.json";
-import alotPerforanceData from "./scenario/tweets_alot_performance";
-import { Scenario } from "../mock-manager-api/model/Mock";
+import { wireMockToMockManager } from "../../mock-manager-api/in/wiremockToMockManager";
+import { Scenario } from "../../mock-manager-api/model/Mock";
+import tweetsWiremock from "../adapters/mocks/tweets.mock.json";
+import tweetsPerf from "../adapters/mocks/tweets_performance.mock.json";
+import tweetsEmpty from "../adapters/mocks/tweets_empty.mock.json";
+import alotPerforanceData from "../adapters/mocks/tweets_alot_performance";
 
 export const tweetsWiremockData = wireMockToMockManager(tweetsWiremock);
 export const tweetsRefWiremockData = wireMockToMockManager(tweetsPerf);

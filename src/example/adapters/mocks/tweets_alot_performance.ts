@@ -1,9 +1,9 @@
 import faker from "faker";
-import { Tweet } from "../../example/Tweet";
 import {
   CreateMockManagerRule,
   MockManagerRule,
-} from "../../mock-manager-api/model/Mock";
+} from "../../../mock-manager-api/model/Mock";
+import { Tweet } from "../../models/Tweet";
 
 export default (): MockManagerRule => {
   const tweets: Tweet[] = [];

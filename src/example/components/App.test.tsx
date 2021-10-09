@@ -5,16 +5,12 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import App from "./App";
 import "@testing-library/jest-dom";
 
+import { initializeMockServer as initializeMock } from "../../mock-manager-api/out/node/initializeMock";
 import {
   emptyScenario,
   happyScenario,
   performanceScenaro,
-  scenarios,
-  tweetsEmptyWiremockData,
-  tweetsRefWiremockData,
-  tweetsWiremockData,
-} from "../mock-manager-dx/initializer";
-import { initializeMockServer as initializeMock } from "../mock-manager-api/out/node/initializeMock";
+} from "../scenarios/scenario";
 
 describe("app", () => {
   describe("Should render happy app", () => {

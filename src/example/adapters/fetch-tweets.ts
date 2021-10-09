@@ -1,4 +1,4 @@
-import type { Tweet } from "./Tweet";
+import type { Tweet } from "../models/Tweet";
 
 export const fetchTweets = async (): Promise<Tweet[]> => {
   return window

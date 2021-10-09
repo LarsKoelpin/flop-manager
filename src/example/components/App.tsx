@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "../mock-manager-api/ui/MockManagerUI";
-import { fetchTweets } from "./fetch-tweets";
-import type { Tweet } from "./Tweet";
+import { fetchTweets } from "../adapters/fetch-tweets";
+import "../../mock-manager-api/ui/MockManagerUI";
+import { Tweet } from "../models/Tweet";
 
 declare global {
   namespace JSX {

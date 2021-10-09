@@ -1,5 +1,5 @@
 import { setupServer } from "msw/node";
-import { MockManagerRule, Scenario } from "../../model/Mock";
+import { Scenario } from "../../model/Mock";
 import { rest } from "msw";
 
 export const initializeMockServer = (m: Scenario[]) => {
