@@ -2,7 +2,7 @@ import { wireMockToMockManager } from "../mock-manager-api/in/wiremockToMockMana
 import tweetsWiremock from "./scenario/tweets.mock.json";
 import tweetsPerf from "./scenario/tweets_performance.mock.json";
 import tweetsEmpty from "./scenario/tweets_empty.mock.json";
-import { Scenario } from "../mock-manager-api/Mock";
+import { Scenario } from "../mock-manager-api/model/Mock";
 
 export const tweetsWiremockData = wireMockToMockManager(tweetsWiremock);
 export const tweetsRefWiremockData = wireMockToMockManager(tweetsPerf);

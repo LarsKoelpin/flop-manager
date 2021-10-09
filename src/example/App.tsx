@@ -18,10 +18,13 @@ function App({}: any) {
   const [c, setC] = useState(0);
   useEffect(() => {
     console.log("REGISTER HANDLER");
-    (window as any).mockManager.addEventListener("change", () => {
-      console.log("CHANGED");
-      setC((x) => x + 1);
-    });
+    (window as any).mockManager.addEventListener(
+      "active-scenario-changed",
+      () => {
+        console.log("CHANGED");
+        setC((x) => x + 1);
+      }
+    );
   }, []);
   // Create the count state.
   const [data, setData] = useState<Tweet[]>([]);

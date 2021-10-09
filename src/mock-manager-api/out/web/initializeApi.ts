@@ -1,4 +1,4 @@
-import { MockManagerRule, Scenario } from "../../Mock";
+import { MockManagerRule, Scenario } from "../../model/Mock";
 import { initializeMockSW } from "./initializeMockSw";
 
 export type MockManager = {

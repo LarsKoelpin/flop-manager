@@ -1528,6 +1528,18 @@
     "schema-utils" "^2.6.5"
     "source-map" "^0.7.3"
 
+"@renke/vo@^0.0.2":
+  "integrity" "sha512-mtnuBJCz0MZanZIE4NqP8yjpUoSJJO0BGYsfshmgIyBwK1MF4lPDy1zQxUmVXqKGe9abNu2ppvnLplrBwSJKoQ=="
+  "resolved" "https://registry.npmjs.org/@renke/vo/-/vo-0.0.2.tgz"
+  "version" "0.0.2"
+
+"@renke/vod@^0.0.2":
+  "integrity" "sha512-gMm+rdgF0psD0j4xqW0/8jsxmKpCWACHhY1TWvwamJohgam0HWrKWhxhauXrV2VlCFbpZHPyXAK8gzCi66SOgw=="
+  "resolved" "https://registry.npmjs.org/@renke/vod/-/vod-0.0.2.tgz"
+  "version" "0.0.2"
+  dependencies:
+    "@renke/vo" "^0.0.2"
+
 "@rollup/plugin-node-resolve@^7.1.1":
   "integrity" "sha512-RxtSL3XmdTAE2byxekYLnx+98kEUOrPHF/KRVjLH+DEIHy6kjIw7YINQzn+NXiH/NTrQLAwYs0GWB+csWygA9Q=="
   "resolved" "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-7.1.3.tgz"
@@ -12327,3 +12339,8 @@
   "integrity" "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
   "resolved" "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz"
   "version" "0.1.0"
+
+"zod@^3.5.0", "zod@^3.9.8":
+  "integrity" "sha512-pTNhdJd45PPOBpdxO8x00Tv+HhknYGx3WdgFQndazp+G1Gd2Cxf81L5yMfCIIcd/SA3VqrcTv/G4bFcr+DsZhA=="
+  "resolved" "https://registry.npmjs.org/zod/-/zod-3.9.8.tgz"
+  "version" "3.9.8"

@@ -1,5 +1,5 @@
 import { setupServer } from "msw/node";
-import { MockManagerRule } from "../../Mock";
+import { MockManagerRule } from "../../model/Mock";
 import { rest } from "msw";
 
 export const initializeMockServer = (m: MockManagerRule) => {

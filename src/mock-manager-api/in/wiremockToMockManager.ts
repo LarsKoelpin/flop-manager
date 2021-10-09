@@ -1,11 +1,11 @@
-import type { MockManagerRule } from "../Mock";
+import { MockManagerRule } from "../model/Mock";
 
 type Wiremock = any;
 
 export const wireMockToMockManager = (input: Wiremock): MockManagerRule => {
-  return {
+  return MockManagerRule({
     path: "http://localhost:8080/tweets",
     method: "GET",
     responseBody: input.response.body,
-  };
+  });
 };
