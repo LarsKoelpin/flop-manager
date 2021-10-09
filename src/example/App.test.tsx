@@ -33,7 +33,7 @@ describe("app", () => {
     });
   });
 
-  describe("Should render perf app", () => {
+  describe("Performance", () => {
     const server = initializeMock([performanceScenaro]);
     beforeAll(() => server.listen());
     afterEach(() => server.resetHandlers());
